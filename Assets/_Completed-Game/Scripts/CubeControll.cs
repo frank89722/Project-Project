@@ -16,13 +16,17 @@ public class CubeControll : MonoBehaviour {
 
 		if (Input.GetKey (KeyCode.W) & Input.GetKey (KeyCode.D)) {
 			gameObject.transform.rotation = Quaternion.Euler (0f, 45f, 0f);
-		} else if (Input.GetKey (KeyCode.S) & Input.GetKey (KeyCode.D)) {
+            transform.Translate(new Vector3(0, 0, 1)*mSpeed);
+        } else if (Input.GetKey (KeyCode.S) & Input.GetKey (KeyCode.D)) {
 			gameObject.transform.rotation = Quaternion.Euler (0f, 135f, 0f);
-		} else if (Input.GetKey (KeyCode.A) & Input.GetKey (KeyCode.S)) {
+            transform.Translate(new Vector3(0, 0, 1) * mSpeed);
+        } else if (Input.GetKey (KeyCode.A) & Input.GetKey (KeyCode.S)) {
 			gameObject.transform.rotation = Quaternion.Euler (0f, 225f, 0f);
-		} else if (Input.GetKey (KeyCode.A) & Input.GetKey (KeyCode.W)) {
+            transform.Translate(new Vector3(0, 0, 1) * mSpeed);
+        } else if (Input.GetKey (KeyCode.A) & Input.GetKey (KeyCode.W)) {
 			gameObject.transform.rotation = Quaternion.Euler (0f, 315f, 0f);
-		} else if (Input.GetKey (KeyCode.W)) {
+            transform.Translate(new Vector3(0, 0, 1) * mSpeed);
+        } else if (Input.GetKey (KeyCode.W)) {
 			transform.position += Vector3.forward * mSpeed;
 			gameObject.transform.rotation = Quaternion.Euler (0f, 0f, 0f);
 		} else if (Input.GetKey (KeyCode.A)) {
