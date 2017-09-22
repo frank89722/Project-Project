@@ -1,46 +1,48 @@
 ﻿using UnityEngine;
-using System.Collections;
-public class TestCube : MonoBehaviour {
-	public GameObject model;
-	private Animator animator;
-	public GameObject [] target = new GameObject[8];
-	public float speed;
-	void Start () {
-		animator = model.GetComponent<Animator> ();
-	}
+using UnityEngine.Networking;
 
-	void Update () {
-		animator.SetBool("RunState",false);////(1)
-		if(Input.GetKey(KeyCode.W)){////(2)
-			Vector3 targetDir = target[0].transform.position - transform.position;
-			float step = speed * Time.deltaTime;
-			Vector3 newDir = Vector3.RotateTowards(transform.forward, targetDir, step, 0.0F);
-			transform.rotation = Quaternion.LookRotation(newDir);
-			animator.SetBool("RunState",true);////(1)
-		}
-		else if(Input.GetKey(KeyCode.S)){////(2)
+public class TestCube : NetworkBehaviour
+{
+    public GameObject bulletPrefab;
+    public Transform bulletSpawn;
 
-			Vector3 targetDir = target[4].transform.position - transform.position;
-			float step = speed * Time.deltaTime;
-			Vector3 newDir = Vector3.RotateTowards(transform.forward, targetDir, step, 0.0F);
-			transform.rotation = Quaternion.LookRotation(newDir);
-			animator.SetBool("RunState",true);
-		}
-		else if(Input.GetKey(KeyCode.A)){////(2)
+    void Update()
+    {
+        if (!isLocalPlayer)
+        {
+            return;
+        }
 
-			Vector3 targetDir = target[6].transform.position - transform.position;
-			float step = speed * Time.deltaTime;
-			Vector3 newDir = Vector3.RotateTowards(transform.forward, targetDir, step, 0.0F);
-			transform.rotation = Quaternion.LookRotation(newDir);
-			animator.SetBool("RunState",true);
-		}
-		else if(Input.GetKey(KeyCode.D)){////(2)
+        var x = Input.GetAxis("Horizontal") * Time.deltaTime * 150.0f;
+        var z = Input.GetAxis("Vertical") * Time.deltaTime * 3.0f;
 
-			Vector3 targetDir = target[2].transform.position - transform.position;
-			float step = speed * Time.deltaTime;
-			Vector3 newDir = Vector3.RotateTowards(transform.forward, targetDir, step, 0.0F);
-			transform.rotation = Quaternion.LookRotation(newDir);
-			animator.SetBool("RunState",true);
-		}
-	}
+        transform.Rotate(0, x, 0);
+        transform.Translate(0, 0, z);
+
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            Fire();
+        }
+    }
+
+
+    void Fire()
+    {
+        // Create the Bullet from the Bullet Prefab
+        var bullet = (GameObject)Instantiate(
+            bulletPrefab,
+            bulletSpawn.position,
+            bulletSpawn.rotation);
+
+        // Add velocity to the bullet
+        bullet.GetComponent<Rigidbody>().velocity = bullet.transform.forward * 6;
+
+        // Destroy the bullet after 2 seconds
+        Destroy(bullet, 2.0f);        
+    }
+
+    public override void OnStartLocalPlayer ()
+    {
+        GetComponent<MeshRenderer>().material.color = Color.blue;
+    }
 }
