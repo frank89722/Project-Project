@@ -5,6 +5,8 @@ using UnityEngine;
 public class CubeControll : MonoBehaviour {
 	public float mSpeed;
 	private Rigidbody rb;
+	public GameObject bulletPrefab;
+    public Transform bulletSpawn;
 	// Use this for initialization
 	void Start () {
 		mSpeed = 0.2f;
@@ -12,10 +14,10 @@ public class CubeControll : MonoBehaviour {
 		
 	}
 	// Update is called once per frame
-	void FixedUpdate () {
+	void Update () {
 		
 		//transform.Translate (mSpeed * Input.GetAxis ("Horizontal") * Time.deltaTime, 0f, mSpeed * Input.GetAxis ("Vertical") * Time.deltaTime);
-
+    
 		// Set some local float variables equal to the value of our Horizontal and Vertical Inputs
 		float moveHorizontal = Input.GetAxis ("Horizontal");
 		float moveVertical = Input.GetAxis ("Vertical");
@@ -51,5 +53,20 @@ public class CubeControll : MonoBehaviour {
 			transform.position += Vector3.right * mSpeed;
 			gameObject.transform.rotation = Quaternion.Euler (0f, 90f, 0f);
 		}
+		
+			fire();
+		
+		   
    	}
+	   void fire()
+	   {
+		   if(Input.GetKey(KeyCode.Space)){
+		    var bullet = (GameObject)Instantiate(bulletPrefab, bulletSpawn.position, bulletSpawn.rotation);
+          //  bullet.transform.Translate(Vector3.forward * 3f *1 );
+        // Add velocity to the bullet
+       
+        // Destroy the bullet after 2 seconds
+        Destroy(bullet, 0.5f);
+		   }
+	   }
 }
