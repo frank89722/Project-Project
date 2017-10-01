@@ -10,7 +10,7 @@ public class Fire : MonoBehaviour
     //public GameObject bullet;
     // Use this for initialization
     void Start(){
-        mSpeed = 0.2f;
+        mSpeed = 0.3f;
         //rb = GetComponent<Rigidbody>();
     }
 
@@ -19,7 +19,7 @@ public class Fire : MonoBehaviour
         
 
     //var bullet = (GameObject)Instantiate(bulletPrefab, bulletSpawn.position, bulletSpawn.rotation);
-     bulletPrefab.transform.Translate(Vector3.forward * 5f * mSpeed);
+     bulletPrefab.transform.Translate(Vector3.forward * mSpeed);
     
         
     }
