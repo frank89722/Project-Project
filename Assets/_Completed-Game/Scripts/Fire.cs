@@ -6,11 +6,12 @@ public class Fire : MonoBehaviour
 {
     public GameObject bulletPrefab;
     private Rigidbody rb;
+    public GameObject emy;
     public float mSpeed;
     //public GameObject bullet;
     // Use this for initialization
     void Start(){
-        mSpeed = 0.5f;
+        mSpeed = 0.6f;
         rb = GetComponent<Rigidbody>();
     }
 
@@ -20,16 +21,11 @@ public class Fire : MonoBehaviour
 
     //var bullet = (GameObject)Instantiate(bulletPrefab, bulletSpawn.position, bulletSpawn.rotation);
      bulletPrefab.transform.Translate(Vector3.forward * mSpeed);
-        
     }
 
-    void OnTriggerEnter(Collider other) 
-    {
-		// ..and if the game object we intersect has the tag 'Pick Up' assigned to it..
-		if (other.gameObject.CompareTag ("Wall"))
-		{
-			// Make the other game object (the pick up) inactive, to make it disappear
-			gameObject.SetActive (false);
+    void OnTriggerEnter(Collider other) {
+		if (other.gameObject.CompareTag ("Wall")){
+            Destroy(gameObject);
 		}
 	}
        

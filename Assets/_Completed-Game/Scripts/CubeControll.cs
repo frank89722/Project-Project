@@ -63,7 +63,7 @@ public class CubeControll : MonoBehaviour {
 		   if(Input.GetKey(KeyCode.Space)){
 		    var bullet = (GameObject)Instantiate(bulletPrefab, bulletSpawn.position, bulletSpawn.rotation);
         // Destroy the bullet after 2 seconds
-        //Destroy(bullet, 0.5f);
+        Destroy(bullet, 3f);
 		   }
 	   }
 }

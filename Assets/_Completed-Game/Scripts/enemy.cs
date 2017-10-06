@@ -21,5 +21,5 @@ public class enemy : MonoBehaviour {
 		 {
             x+=1;
 		 }
-	}
+	}	
 }
