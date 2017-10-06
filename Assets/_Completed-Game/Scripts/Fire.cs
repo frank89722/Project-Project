@@ -5,13 +5,13 @@ using UnityEngine;
 public class Fire : MonoBehaviour
 {
     public GameObject bulletPrefab;
-    public Transform bulletSpawn;
+    private Rigidbody rb;
     public float mSpeed;
     //public GameObject bullet;
     // Use this for initialization
     void Start(){
-        mSpeed = 0.3f;
-        //rb = GetComponent<Rigidbody>();
+        mSpeed = 0.5f;
+        rb = GetComponent<Rigidbody>();
     }
 
     // Update is called once per frame
@@ -20,9 +20,18 @@ public class Fire : MonoBehaviour
 
     //var bullet = (GameObject)Instantiate(bulletPrefab, bulletSpawn.position, bulletSpawn.rotation);
      bulletPrefab.transform.Translate(Vector3.forward * mSpeed);
-    
         
     }
+
+    void OnTriggerEnter(Collider other) 
+    {
+		// ..and if the game object we intersect has the tag 'Pick Up' assigned to it..
+		if (other.gameObject.CompareTag ("Wall"))
+		{
+			// Make the other game object (the pick up) inactive, to make it disappear
+			gameObject.SetActive (false);
+		}
+	}
        
    /* void kire()
     {

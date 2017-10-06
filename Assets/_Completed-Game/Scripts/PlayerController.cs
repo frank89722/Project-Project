@@ -9,12 +9,12 @@ public class PlayerController : MonoBehaviour {
 	
 	// Create public variables for player speed, and for the Text UI game objects
 	public float speed;
-	public Text countText;
-	public Text winText;
+	//public Text countText;
+	//public Text winText;
 
 	// Create private references to the rigidbody component on the player, and the count of pick up objects picked up so far
 	private Rigidbody rb;
-	private int count;
+	//private int count;
 
 	// At the start of the game..
 	void Start ()
@@ -23,13 +23,13 @@ public class PlayerController : MonoBehaviour {
 		rb = GetComponent<Rigidbody>();
 
 		// Set the count to zero 
-		count = 0;
+		//count = 0;
 
 		// Run the SetCountText function to update the UI (see below)
-		SetCountText ();
+		//SetCountText ();
 
 		// Set the text property of our Win Text UI to an empty string, making the 'You Win' (game over message) blank
-		winText.text = "";
+		//winText.text = "";
 	}
 
 	// Each physics step..
@@ -49,7 +49,7 @@ public class PlayerController : MonoBehaviour {
 
 	// When this game object intersects a collider with 'is trigger' checked, 
 	// store a reference to that collider in a variable named 'other'..
-	void OnTriggerEnter(Collider other) 
+	/*void OnTriggerEnter(Collider other) 
 	{
 		// ..and if the game object we intersect has the tag 'Pick Up' assigned to it..
 		if (other.gameObject.CompareTag ("Pick Up"))
@@ -63,10 +63,10 @@ public class PlayerController : MonoBehaviour {
 			// Run the 'SetCountText()' function (see below)
 			SetCountText ();
 		}
-	}
+	}*/
 
 	// Create a standalone function that can update the 'countText' UI and check if the required amount to win has been achieved
-	void SetCountText()
+	/*void SetCountText()
 	{
 		// Update the text field of our 'countText' variable
 		countText.text = "Count: " + count.ToString ();
@@ -77,5 +77,5 @@ public class PlayerController : MonoBehaviour {
 			// Set the text value of our 'winText'
 			winText.text = "You Win!";
 		}
-	}
+	}*/
 }
