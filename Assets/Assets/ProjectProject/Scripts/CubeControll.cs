@@ -7,28 +7,19 @@ public class CubeControll : MonoBehaviour {
 	public Rigidbody rb;
 	public GameObject bulletPrefab;
     public Transform bulletSpawn;
+	public int delay;
 	// Use this for initialization
 	void Start () {
 		mSpeed = 0.2f;
 		rb = GetComponent<Rigidbody>();
+		delay = 0;
 		
 	}
 	// Update is called once per frame
-	void Update () {
-		
-		//transform.Translate (mSpeed * Input.GetAxis ("Horizontal") * Time.deltaTime, 0f, mSpeed * Input.GetAxis ("Vertical") * Time.deltaTime);
-    
-		// Set some local float variables equal to the value of our Horizontal and Vertical Inputs
-		float moveHorizontal = Input.GetAxis ("Horizontal");
-		float moveVertical = Input.GetAxis ("Vertical");
+	void FixedUpdate () {
 
-		// Create a Vector3 variable, and assign X and Z to feature our horizontal and vertical float variables above
-		Vector3 movement = new Vector3 (moveHorizontal, 0.0f, moveVertical);
-
-		// Add a physical force to our Player rigidbody using our 'movement' Vector3 above, 
-		// multiplying it by 'speed' - our public player speed that appears in the inspectors
-		rb.AddForce (movement * mSpeed);
-		if (Input.GetKey (KeyCode.W) & Input.GetKey (KeyCode.D)) {
+	
+		if (Input.GetKey (KeyCode.W) & Input.GetKey (KeyCode.D) & Time.timeScale!=0) {
 			gameObject.transform.rotation = Quaternion.Euler (0f, 45f, 0f);
             transform.Translate(new Vector3(0, 0, 1)*mSpeed);
         } else if (Input.GetKey (KeyCode.S) & Input.GetKey (KeyCode.D)) {
@@ -58,12 +49,14 @@ public class CubeControll : MonoBehaviour {
 		
 		   
    	}
-	   void fire()
-	   {
-		   if(Input.GetKey(KeyCode.Space)){
-		    var bullet = (GameObject)Instantiate(bulletPrefab, bulletSpawn.position, bulletSpawn.rotation);
-        // Destroy the bullet after 2 seconds
-        Destroy(bullet, 3f);
-		   }
-	   }
+	void fire(){
+		if(Input.GetKey(KeyCode.Space)){
+			delay++;
+			if (delay == 2) {
+				var bullet = (GameObject)Instantiate (bulletPrefab, bulletSpawn.position, bulletSpawn.rotation);
+				Destroy (bullet, 3f);
+				delay = 0;
+			}
+		}
+	}
 }

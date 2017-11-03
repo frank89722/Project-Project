@@ -2,44 +2,41 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+//using SCC;
+
 
 public class enemydestroy : MonoBehaviour
 {
-    public int heal;
-    public float max_heal = 100;
+    public static int heal;
+	public float max_heal = 100;
     public float cur_heal = 0;
     public GameObject healthbar;
+	public int count;
+	public int b;
     
-    // Use this for initialization
     void Start()
     {
         cur_heal = max_heal;
         InvokeRepeating("healbar", 1f, 1f);
         heal = 20;
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-
+		count = 0;
     }
     
-    void OnTriggerEnter(Collider other)
+    public void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.CompareTag("Pick Up"))
-        {
-            heal--;
-            sethealthbar();
-       
-            if (heal == 0) Destroy(gameObject);
+		if (other.gameObject.CompareTag ("Pick Up")) {
+			heal--;
 
-           /* else if (heal <= 8) GetComponent<Renderer>().material.color = Color.red;
-            else if (heal <= 14) GetComponent<Renderer>().material.color = Color.yellow;
-        */
-        }
+			sethealthbar ();
+			if (heal == 0) {
+				Destroy (gameObject);
+				count++;
+				b = count;
+				//SCC.ScoreSystem.Counter(b);
+			}
+		}
     }
-    void sethealthbar()
-    {
+    void sethealthbar(){
         cur_heal -= 5;
         float calc_heal = cur_heal / max_heal;
         sethealthbar(calc_heal);
@@ -48,4 +45,6 @@ public class enemydestroy : MonoBehaviour
     {
         healthbar.transform.localScale = new Vector3(myhealth, healthbar.transform.localScale.y, healthbar.transform.localScale.z);
     }
+
+
 }

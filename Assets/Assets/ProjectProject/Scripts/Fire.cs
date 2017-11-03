@@ -28,18 +28,6 @@ public class Fire : MonoBehaviour
             Destroy(gameObject);
 		}
 	}
-       
-   /* void kire()
-    {
-        // Create the Bullet from the Bullet Prefab
-
-        var bullet = (GameObject)Instantiate(bulletPrefab, bulletSpawn.position, bulletSpawn.rotation);
-
-        // Add velocity to the bullet
-       
-        // Destroy the bullet after 2 seconds
-        Destroy(bullet, 1.0f);
-    }*/
 }
 
 
