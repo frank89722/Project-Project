@@ -3,20 +3,17 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-namespace SCC{
-public class ScoreSystem {
+public class ScoreSystem : MonoBehaviour {
 	public Text countText;
 	public Text winText;
-	public int count;
+	public static int count = 0;
 		 
-	void Start(){
-		SetCountText ();
-		count = 0;
+	void Update(){
+		SetCountText();
 	}
 
+
 	public void Counter(int countfor){
-		//count = count+countfor;
-		//SetCountText ();
 	}
 
 	void SetCountText()
@@ -32,4 +29,3 @@ public class ScoreSystem {
 		}
 	}
 }	
-}
