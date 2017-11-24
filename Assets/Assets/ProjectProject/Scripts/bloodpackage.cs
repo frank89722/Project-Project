@@ -24,7 +24,7 @@ using UnityEngine;
             if (s <= 360)
             {
                 package.transform.rotation = Quaternion.Euler(0, s, 45);
-                package.transform.position = new Vector3(0, b * Time.deltaTime, 0);
+   
                 s += 1;
 
             }
@@ -32,7 +32,7 @@ using UnityEngine;
             {
                 s = 0;
                 package.transform.rotation = Quaternion.Euler(0, s, 45);
-                package.transform.position = new Vector3(0, -b * Time.deltaTime, 0);
+              
         }
             if (x >= 150)
             {
