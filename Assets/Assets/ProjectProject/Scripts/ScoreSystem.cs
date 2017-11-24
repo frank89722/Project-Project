@@ -22,10 +22,10 @@ public class ScoreSystem : MonoBehaviour {
 		countText.text = "Count: " + count.ToString ();
 
 		// Check if our 'count' is equal to or exceeded 12
-		if (count >= 12) 
-		{
-			// Set the text value of our 'winText'
-			winText.text = "You Win!";
+		if (count >= 10) {
+			enemy.level = 120;
+		} else if (count >= 25) {
+			enemy.level = 70;
 		}
 	}
 }	

@@ -6,16 +6,17 @@ public class enemy : MonoBehaviour
 {
     public GameObject box;
     public float x;
+	public static int level;
     // Use this for initialization
-    void Start()
-    {
-        x = 0;
+    void Start(){
+		level = 200;
+        x = 199;
     }
 
     // Update is called once per frame
     void FixedUpdate()
     {
-        if (x == 100)
+        if (x >= level)
         {
             Instantiate(box, new Vector3(Random.Range(-8f, 8f), 0.5f, Random.Range(-8f, 8f)), box.transform.rotation);
             x = 0;

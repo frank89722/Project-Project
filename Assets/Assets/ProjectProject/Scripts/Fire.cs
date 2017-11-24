@@ -6,7 +6,6 @@ public class Fire : MonoBehaviour
 {
     public GameObject bulletPrefab;
     private float mSpeed;
-	public string targett;
 
     void Start(){
         mSpeed = 0.4f;
@@ -18,7 +17,7 @@ public class Fire : MonoBehaviour
     }
 
     void OnTriggerEnter(Collider other) {
-		if (other.gameObject.CompareTag ("Wall")) {
+		if (other.gameObject.CompareTag ("Wall") | other.gameObject.CompareTag ("enemy")) {
 			Destroy (gameObject);
 		}
 	}
