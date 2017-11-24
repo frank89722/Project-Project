@@ -6,9 +6,9 @@ using UnityEngine.UI;
 
 public class enemydestroy : MonoBehaviour
 {
-    public int heal;
+    public int heal=50;
 	public float max_heal = 100f;
-    float cur_heal = 0f;
+    public float cur_heal = 0f;
     public GameObject healthbar;
 	public int count;
 	public string tag;
@@ -24,7 +24,7 @@ public class enemydestroy : MonoBehaviour
     {
 		if (other.gameObject.CompareTag (tag)) {
 			heal--;
-			Debug.Log ("Heal:" + heal);
+			
 			if (heal == 0) {
 				Destroy (gameObject);
 				ScoreSystem.count++;
@@ -32,7 +32,7 @@ public class enemydestroy : MonoBehaviour
 			sethealthbar ();}
     }
     void sethealthbar(){
-        cur_heal -= 5;
+        cur_heal -= 5f;
 		float calc_heal = cur_heal / max_heal;
         sethealthbar(calc_heal);
     }
