@@ -21,8 +21,6 @@ public class CubeControll : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
-
-
         if (Input.GetKey(KeyCode.W) & Input.GetKey(KeyCode.D) & Time.timeScale != 0)
         {
             gameObject.transform.rotation = Quaternion.Euler(0f, 45f, 0f);
@@ -63,11 +61,12 @@ public class CubeControll : MonoBehaviour
             transform.position += Vector3.right * mSpeed;
             gameObject.transform.rotation = Quaternion.Euler(0f, 90f, 0f);
         }
-
+    
         fire();
-
-
     }
+
+
+
     void fire()
     {
         if (Input.GetKey(KeyCode.Space))

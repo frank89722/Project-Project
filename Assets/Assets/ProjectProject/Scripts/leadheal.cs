@@ -4,9 +4,9 @@ using UnityEngine;
 using UnityEngine.UI;
 
 public class leadheal : MonoBehaviour {
-    public int heal = 1000;
+    public static int heal = 50;
     public float max_heal = 100f;
-    public float cur_heal = 0f;
+    public static float cur_heal = 2f;
     public GameObject healthbar;
     public int count;
     public string tag;
@@ -15,28 +15,25 @@ public class leadheal : MonoBehaviour {
         cur_heal = max_heal;
         InvokeRepeating("healbar", 1f, 1f);
     }
-	
-	// Update is called once per frame
-	void Update () {
-        
+
+    private void Update()
+    {
+        sethealthbar();
     }
-public void OnTriggerEnter(Collider other)
+    void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.CompareTag(tag))
         {
             heal--;
-
+            cur_heal -= 2;
             if (heal == 0)
             {
                 Destroy(gameObject);
-                ScoreSystem.count++;
             }
-            sethealthbar();
         }
     }
     void sethealthbar()
     {
-        cur_heal -= 2f;
         float calc_heal = cur_heal / max_heal;
         sethealthbar(calc_heal);
     }
