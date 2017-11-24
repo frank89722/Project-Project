@@ -7,21 +7,22 @@ using UnityEngine.UI;
 public class enemydestroy : MonoBehaviour
 {
     public int heal;
-	public float max_heal = 100;
-    public float cur_heal = 0;
+	public float max_heal = 100f;
+    float cur_heal = 0f;
     public GameObject healthbar;
 	public int count;
+	public string tag;
     
     void Start()
     {
         cur_heal = max_heal;
         InvokeRepeating("healbar", 1f, 1f);
-        heal = 20;
+        //heal = 20;
     }
     
 	public void OnTriggerEnter(Collider other)
     {
-		if (other.gameObject.CompareTag ("Pick Up")) {
+		if (other.gameObject.CompareTag (tag)) {
 			heal--;
 			Debug.Log ("Heal:" + heal);
 			if (heal == 0) {
