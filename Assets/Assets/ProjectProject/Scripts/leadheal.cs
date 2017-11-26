@@ -19,6 +19,9 @@ public class leadheal : MonoBehaviour {
     private void Update()
     {
         sethealthbar();
+        if (cur_heal >= max_heal) {
+            cur_heal = max_heal;
+        }
     }
     void OnTriggerEnter(Collider other)
     {
