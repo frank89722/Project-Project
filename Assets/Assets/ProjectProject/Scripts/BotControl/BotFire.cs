@@ -12,7 +12,7 @@ public class BotFire : MonoBehaviour
 		mSpeed = 0.1f;
 	}
 
-	void Update(){
+	void FixedUpdate(){
 		bulletPrefab.transform.Translate(Vector3.forward * mSpeed);
 	}
 

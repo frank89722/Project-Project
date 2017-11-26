@@ -19,7 +19,7 @@ public class bloodpackage : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
         if (s <= 360)
         {
@@ -31,7 +31,7 @@ public class bloodpackage : MonoBehaviour
             s = 0;
             package.transform.rotation = Quaternion.Euler(0, s, 45);
         }
-         if (x >= 1000){
+         if (x >= 600){
              Instantiate(Game, new Vector3(Random.Range(-8f, 8f), 0.5f, Random.Range(-8f, 8f)), Game.transform.rotation);
              x = 0;
          }

@@ -12,7 +12,7 @@ public class Fire : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update(){
+    void FixedUpdate(){
          bulletPrefab.transform.Translate(Vector3.forward * mSpeed);
     }
 
