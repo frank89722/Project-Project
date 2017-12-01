@@ -16,11 +16,12 @@ public class leadheal : MonoBehaviour {
         InvokeRepeating("healbar", 1f, 1f);
     }
 
-    private void Update()
+    private void FixedUpdate()
     {
         sethealthbar();
-        if (cur_heal >= max_heal) {
+        if (cur_heal > max_heal) {
             cur_heal = max_heal;
+            heal = 50;
         }
     }
     void OnTriggerEnter(Collider other)

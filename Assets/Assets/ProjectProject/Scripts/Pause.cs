@@ -12,7 +12,7 @@ public class Pause : MonoBehaviour {
 		backButton.SetActive (false);
 		StartCoroutine(PauseCoroutine());    
 	}
-	IEnumerator PauseCoroutine() {
+	public IEnumerator PauseCoroutine() {
 		while (true)
 		{
 			if (Input.GetKeyDown(KeyCode.Escape))
@@ -23,7 +23,7 @@ public class Pause : MonoBehaviour {
 					OnPause ();
 				}
 			}    
-			yield return null;    
+			yield return null;
 		}
 	}
 

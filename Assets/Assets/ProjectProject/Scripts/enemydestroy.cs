@@ -17,7 +17,7 @@ public class enemydestroy : MonoBehaviour
     {
         cur_heal = max_heal;
         InvokeRepeating("healbar", 1f, 1f);
-        //heal = 20;
+
     }
     
 	public void OnTriggerEnter(Collider other)
