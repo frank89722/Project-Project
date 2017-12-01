@@ -12,6 +12,7 @@ public class BotAI : MonoBehaviour
 	public int delay;
 	public GameObject bulletPrefab;
 	public Transform bulletSpawn;
+    public bool move;
 
 	// Use this for initialization
 	void Start (){
@@ -26,9 +27,15 @@ public class BotAI : MonoBehaviour
 	}
 
 	void AI(){
-		if (Vector3.Distance (transform.position, Leader.position) >= MinDistance & Vector3.Distance (transform.position, Leader.position) <= MaxDistance){
-			transform.position += transform.forward*AISpeed*Time.deltaTime;
-		}
+        if (move == true) {
+            if (Vector3.Distance(transform.position, Leader.position) >= MinDistance & Vector3.Distance(transform.position, Leader.position) <= MaxDistance) {
+                transform.position += transform.forward * AISpeed * Time.deltaTime;
+            }
+        } else {
+            if (Vector3.Distance(transform.position, Leader.position) >= MinDistance & Vector3.Distance(transform.position, Leader.position) <= MaxDistance) {
+                transform.position += transform.forward * 0f * Time.deltaTime;
+            }
+        }
 	}
 
 	void fire(){		

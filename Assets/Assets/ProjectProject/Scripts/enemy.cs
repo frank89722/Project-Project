@@ -14,15 +14,11 @@ public class enemy : MonoBehaviour
     }
 
     // Update is called once per frame
-    void FixedUpdate()
-    {
-        if (x >= level)
-        {
-            Instantiate(box, new Vector3(Random.Range(-8f, 8f), 0.5f, Random.Range(-8f, 8f)), box.transform.rotation);
+    void FixedUpdate(){
+        if (x >= level) {
+            Ispawner.SpawnEnemy(box);
             x = 0;
-        }
-        else
-        {
+        } else {
             x += 1;
         }
     }

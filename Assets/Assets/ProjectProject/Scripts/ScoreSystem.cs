@@ -9,20 +9,22 @@ public class ScoreSystem : MonoBehaviour {
     public GameObject levTextObj;
 	public static int count = 0;
     public int textShowTime;
-    public int timer;
-    public int timer2;
+    private int timer;
+    private int timer2;
+    public GameObject bigmama;
+    private int flag1;
 
     void Start(){
-        textShowTime = 100;
         timer = 0;
         timer2 = 0;
+        flag1 = 0;
     }
 
     void Update(){
-        SetCountText();
+        SetLevel();
 	}
 
-	void SetCountText(){
+	void SetLevel(){
 		// Update the text field of our 'countText' variable
 		countText.text = "Count: " + count.ToString ();
 
@@ -42,8 +44,12 @@ public class ScoreSystem : MonoBehaviour {
             } else {
                 levTextObj.SetActive(false);
             }
-			enemy.level = 70;
+			enemy.level = 90;
             levelText.text = "Level 3";
+            if (flag1 < 2) {
+                Ispawner.SpawnEnemy(bigmama);
+                flag1++;
+            }
 		}
 	}
 }	
