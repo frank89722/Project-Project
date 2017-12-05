@@ -13,6 +13,8 @@ public class ScoreSystem : MonoBehaviour {
     private int timer2;
     public GameObject bigmama;
     private int flag1;
+    public GameObject EnemyOntology;
+
 
     void Start(){
         timer = 0;
@@ -39,6 +41,7 @@ public class ScoreSystem : MonoBehaviour {
             levelText.text = "Level 2";
 		} else if (count >= 25) {
             timer2++;
+            Destroy(EnemyOntology, 0f);
             if (timer2 <= textShowTime) {
                 levTextObj.SetActive(true);
             } else {
@@ -46,7 +49,7 @@ public class ScoreSystem : MonoBehaviour {
             }
 			enemy.level = 90;
             levelText.text = "Level 3";
-            if (flag1 < 2) {
+            if (flag1 / 4 ==0) {
                 Ispawner.SpawnEnemy(bigmama);
                 flag1++;
             }
