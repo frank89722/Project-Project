@@ -5,8 +5,8 @@ using UnityEngine;
 public class BotFire : MonoBehaviour
 {
 	public GameObject bulletPrefab;
-	private float mSpeed;
-	public string targett;
+	public float mSpeed;
+	//public string targett;
 
 	void Start(){
 		mSpeed = 0.1f;
