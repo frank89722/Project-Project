@@ -17,7 +17,7 @@ public class Fire : MonoBehaviour
     }
 
     void OnTriggerEnter(Collider other) {
-		if (other.gameObject.CompareTag ("Wall") | other.gameObject.CompareTag ("enemy")) {
+		if (other.gameObject.CompareTag ("Wall") | other.gameObject.CompareTag ("enemy") | other.gameObject.CompareTag("enemy2")) {
 			Destroy (gameObject);
 		}
 	}

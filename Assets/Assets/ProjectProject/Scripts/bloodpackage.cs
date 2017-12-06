@@ -34,7 +34,7 @@ public class bloodpackage : MonoBehaviour{
             s = 0;
             package.transform.rotation = Quaternion.Euler(0, s, 45);
         }
-        if (x == 300){
+        if (x == 400){
             Destroy(GameObject.FindWithTag("healpack"));
         }
         if (x >= 600) {
@@ -59,7 +59,7 @@ public class bloodpackage : MonoBehaviour{
         }
     }
     void sethealthbar() {
-        cur_heal -=0.8f;
+        cur_heal -=0.5f;
         float calc_heal = cur_heal / max_heal;
         sethealthbar(calc_heal);
     }

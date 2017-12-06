@@ -10,16 +10,17 @@ public class ScoreSystem : MonoBehaviour {
 	public static int count = 0;
     public int textShowTime;
     private int timer;
-    private int timer2;
+    public static int i = 1;
+    private int[] scores = new int[] { 10, 25, 29, 45 };
+    private int[] spawnSpeed = new int[] { 180, 120, 1, 80 };
+    public static int[] shouldSpawnBigmama = new int[] { 0, 0, 1, 0 };
+    public static int spawnCounter = 0;
     public GameObject bigmama;
-    private int flag1;
     public GameObject EnemyOntology;
 
 
     void Start(){
         timer = 0;
-        timer2 = 0;
-        flag1 = 0;
     }
 
     void Update(){
@@ -30,29 +31,79 @@ public class ScoreSystem : MonoBehaviour {
 		// Update the text field of our 'countText' variable
 		countText.text = "Count: " + count.ToString ();
 
-		if (count >= 10 & count <25) {
-            enemy.level = 120;
-            timer++;
-            if (timer <= textShowTime) {
-                levTextObj.SetActive(true);
-            } else {
-                levTextObj.SetActive(false);
+        //i=level
+        if (i < 5 && i > 3) {
+            if (count <= scores[i - 1]) {
+                if (spawnCounter <= scores[i - 1]) {
+                    enemy.spawn = true;
+                    enemy.level = spawnSpeed[i - 1];
+                    IlevelText();
+                    levelText.text = "Level" + i;
+                }
+                else {
+                    enemy.spawn = false;
+                    timer = 0;
+                    i++;
+                }
             }
-            levelText.text = "Level 2";
-		} else if (count >= 25) {
-            timer2++;
-            Destroy(EnemyOntology, 0f);
-            if (timer2 <= textShowTime) {
-                levTextObj.SetActive(true);
-            } else {
-                levTextObj.SetActive(false);
+        }
+        else if (count <= scores[i - 1]) {
+            if (spawnCounter <= scores[i - 1]) {
+                enemy.spawn = true;
+                enemy.level = spawnSpeed[i - 1];
+                IlevelText();
+                levelText.text = "Level" + i;
             }
-			enemy.level = 90;
-            levelText.text = "Level 3";
-            if (flag1 / 4 ==0) {
-                Ispawner.SpawnEnemy(bigmama);
-                flag1++;
+            else {
+                enemy.spawn = false;
+                timer = 0;
+                i++;
             }
-		}
-	}
+        }
+            /*if(count <= 10) {
+                if(spawnCounter <= 10) {
+                    enemy.spawn = true;
+                    enemy.level = 120;
+                    IlevelText();
+                    levelText.text = "Level 1";
+                }
+                else {
+                    enemy.spawn = false;
+                    timer = 0;
+                }
+            }*/
+
+            /*if (count >= 2 & count <4) {
+                enemy.level = 120;
+                timer++;
+                if (timer <= textShowTime) {
+                    levTextObj.SetActive(true);
+                } else {
+                    levTextObj.SetActive(false);
+                }
+                levelText.text = "Level 2";
+            } else if (count >= 5) {
+                timer2++;
+                if (timer2 <= textShowTime) {
+                    levTextObj.SetActive(true);
+                } else {
+                    levTextObj.SetActive(false);
+                }
+                enemy.level = 90;
+                levelText.text = "Level 3";
+                if (flag1 / 4 ==0) {
+                    Ispawner.SpawnEnemy(bigmama);
+                    flag1++;
+                }
+            }*/
+        }
+    void IlevelText() {
+        timer++;
+        if (timer <= textShowTime) {
+            levTextObj.SetActive(true);
+        }
+        else {
+            levTextObj.SetActive(false);
+        }
+    }
 }	

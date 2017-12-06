@@ -9,7 +9,8 @@ public class BotAI : MonoBehaviour
 	public float AISpeed = 0.8f;
 	public float MaxDistance = 10f;
 	public float MinDistance = 0.01f;
-	public int delay;
+    private int delayCounter = 0;
+    public int delay;
 	public GameObject bulletPrefab;
 	public Transform bulletSpawn;
     public bool move;
@@ -17,7 +18,6 @@ public class BotAI : MonoBehaviour
 	// Use this for initialization
 	void Start (){
 		Leader = GameObject.FindGameObjectWithTag("Player").transform;
-		delay = 0;
 	}
 		
 	void FixedUpdate (){
@@ -39,11 +39,11 @@ public class BotAI : MonoBehaviour
 	}
 
 	void fire(){		
-		delay++;
-		if (delay >= 40) {
+		delayCounter++;
+		if (delayCounter >= delay) {
 			var bullets = (GameObject)Instantiate (bulletPrefab, bulletSpawn.position, bulletSpawn.rotation);
 			Destroy (bullets, 10f);
-			delay = 0;
+			delayCounter = 0;
 		}
 	}
 }
