@@ -5,7 +5,7 @@ using UnityEngine;
 public class CannonballHeal : MonoBehaviour {
 
     public float max_heal = 100f;
-    public float cur_heal = 0;
+    public float cur_heal = 0f;
     public GameObject healthbar;
     public int count;
     // Use this for initialization
@@ -29,7 +29,7 @@ public class CannonballHeal : MonoBehaviour {
         if (other.gameObject.CompareTag("Pick Up"))
         {
 
-            cur_heal -= 1f;
+            cur_heal -= 12.5f;
             if (cur_heal <= 0)
             {
                 Destroy(gameObject);

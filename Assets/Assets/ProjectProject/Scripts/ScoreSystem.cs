@@ -11,7 +11,7 @@ public class ScoreSystem : MonoBehaviour {
     public int textShowTime;
     private int timer;
     public static int i = 1;
-    private int overtimeCount = 100;
+    private int overtimeCount = 10000000;
     private int otc = 0;
     private int[] scores = new int[] { 10, 20, 24, 40 };
     private int[] spawnSpeed = new int[] { 180, 120, 1, 80 };
