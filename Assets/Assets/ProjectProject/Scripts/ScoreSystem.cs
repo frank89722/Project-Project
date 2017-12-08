@@ -11,7 +11,7 @@ public class ScoreSystem : MonoBehaviour {
     public int textShowTime;
     private int timer;
     public static int i = 1;
-    private int overtimeCount = 10000000;
+    private int overtimeCount = 150;
     private int otc = 0;
     private int[] scores = new int[] { 10, 20, 24, 40 };
     private int[] spawnSpeed = new int[] { 180, 120, 1, 80 };
@@ -36,6 +36,7 @@ public class ScoreSystem : MonoBehaviour {
         if (i <= xyz) {
             if (count <= scores[i - 1]) {
                 if (spawnCounter < scores[i - 1]) {
+                    CannonballHeal.multipleDamage = 1.2f;
                     enemy.spawn = true;
                     enemy.level = spawnSpeed[i - 1];
                     IlevelText();
@@ -49,6 +50,7 @@ public class ScoreSystem : MonoBehaviour {
                 }
             }
         }else if(i > xyz){
+            CannonballHeal.multipleDamage = 2.5f;
             if(otc >= overtimeCount){
                 Ispawner.SpawnEnemy(bigmama);
                 otc = 0;

@@ -6,6 +6,7 @@ public class CannonballHeal : MonoBehaviour {
 
     public float max_heal = 100f;
     public float cur_heal = 0f;
+    public static float multipleDamage;
     public GameObject healthbar;
     public int count;
     // Use this for initialization
@@ -21,7 +22,6 @@ public class CannonballHeal : MonoBehaviour {
         if (cur_heal > max_heal)
         {
             cur_heal = max_heal;
-
         }
     }
     void OnTriggerEnter(Collider other)
@@ -29,7 +29,7 @@ public class CannonballHeal : MonoBehaviour {
         if (other.gameObject.CompareTag("Pick Up"))
         {
 
-            cur_heal -= 12.5f;
+            cur_heal -= multipleDamage;
             if (cur_heal <= 0)
             {
                 Destroy(gameObject);
