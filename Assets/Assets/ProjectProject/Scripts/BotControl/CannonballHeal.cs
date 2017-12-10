@@ -24,27 +24,22 @@ public class CannonballHeal : MonoBehaviour {
             cur_heal = max_heal;
         }
     }
-    void OnTriggerEnter(Collider other)
-    {
-        if (other.gameObject.CompareTag("Pick Up"))
-        {
+    void OnTriggerEnter(Collider other){
+        if (other.gameObject.CompareTag("Pick Up")){
 
             cur_heal -= multipleDamage;
-            if (cur_heal <= 0)
-            {
+            if (cur_heal <= 0){
                 Destroy(gameObject);
                 ScoreSystem.count++;
             }
             sethealthbar();
         }
     }
-    void sethealthbar()
-    {
+    void sethealthbar(){
         float calc_heal = cur_heal / max_heal;
         sethealthbar(calc_heal);
     }
-    public void sethealthbar(float myhealth)
-    {
+    public void sethealthbar(float myhealth){
         healthbar.transform.localScale = new Vector3(myhealth, healthbar.transform.localScale.y, healthbar.transform.localScale.z);
     }
 }

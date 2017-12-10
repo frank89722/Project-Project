@@ -7,6 +7,7 @@ public class CubeControll : MonoBehaviour
     public float mSpeed;
     public Rigidbody rb;
     public GameObject bulletPrefab;
+    public GameObject laserPrefab;
     public Transform bulletSpawn;
     public int delay;
     // Use this for initialization
@@ -63,17 +64,15 @@ public class CubeControll : MonoBehaviour
         }
     
         fire();
+        laser();
     }
 
 
 
-    void fire()
-    {
-        if (Input.GetKey(KeyCode.Space))
-        {
+    void fire(){
+        if (Input.GetKey(KeyCode.Space)){
             delay++;
-            if (delay == 2)
-            {
+            if (delay == 2){
                 var bullet = (GameObject)Instantiate(bulletPrefab, bulletSpawn.position, bulletSpawn.rotation);
                 Destroy(bullet, 3f);
                 delay = 0;
@@ -81,6 +80,14 @@ public class CubeControll : MonoBehaviour
         }
     }
 
-
-
+    void laser(){
+        if (Input.GetKey(KeyCode.L)) {
+            //delay++;
+           // if (delay == 2) {
+                var bullet = (GameObject)Instantiate(laserPrefab, bulletSpawn.position, bulletSpawn.rotation);
+                Destroy(bullet, 3f);
+                //delay = 0;
+           // }
+        }
+    }
 }

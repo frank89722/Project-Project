@@ -33,6 +33,7 @@ public class ScoreSystem : MonoBehaviour {
         int xyz = scores.Length;
 
         //i=level
+        //This is level control
         if (i <= xyz) {
             if (count <= scores[i - 1]) {
                 if (spawnCounter < scores[i - 1]) {
@@ -49,6 +50,7 @@ public class ScoreSystem : MonoBehaviour {
                     enemy.spawn = false;
                 }
             }
+        //Infinity mode
         }else if(i > xyz){
             CannonballHeal.multipleDamage = 2.5f;
             if(otc >= overtimeCount){
