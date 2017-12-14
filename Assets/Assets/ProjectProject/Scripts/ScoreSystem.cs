@@ -37,7 +37,7 @@ public class ScoreSystem : MonoBehaviour {
         if (i <= xyz) {
             if (count <= scores[i - 1]) {
                 if (spawnCounter < scores[i - 1]) {
-                    CannonballHeal.multipleDamage = 1.2f;
+                    CannonHeal.multipleDamage = 1.2f;
                     enemy.spawn = true;
                     enemy.level = spawnSpeed[i - 1];
                     IlevelText();
@@ -52,7 +52,7 @@ public class ScoreSystem : MonoBehaviour {
             }
         //Infinity mode
         }else if(i > xyz){
-            CannonballHeal.multipleDamage = 2.5f;
+            CannonHeal.multipleDamage = 2.5f;
             if(otc >= overtimeCount){
                 Ispawner.SpawnEnemy(bigmama);
                 otc = 0;

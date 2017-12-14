@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CannonballHeal : MonoBehaviour {
+public class CannonHeal : MonoBehaviour {
 
     public float max_heal = 100f;
     public float cur_heal = 0f;
@@ -25,7 +25,7 @@ public class CannonballHeal : MonoBehaviour {
         }
     }
     void OnTriggerEnter(Collider other){
-        if (other.gameObject.CompareTag("Pick Up")){
+        if (other.gameObject.CompareTag("Pick Up") | other.gameObject.CompareTag("Pick Up2")){
 
             cur_heal -= multipleDamage;
             if (cur_heal <= 0){
