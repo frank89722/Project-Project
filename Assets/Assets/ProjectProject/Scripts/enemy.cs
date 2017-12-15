@@ -19,7 +19,7 @@ public class enemy : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate(){
         if (spawn == true) {
-            if (ScoreSystem.shouldSpawnBigmama[ScoreSystem.i-1] == 0) {
+            if (ScoreSystem.shouldSpawnEnemyCube[ScoreSystem.i-1] == 1) {
                 if (x >= level) {
                     Ispawner.SpawnEnemy(box);
                     x = 0;

@@ -9,29 +9,31 @@ public class leadheal : MonoBehaviour {
     public static float cur_heal = 2f;
     public GameObject healthbar;
     public int count;
-    public string tag;
+    public string tag1;
+    public string tag2;
     // Use this for initialization
     void Start () {
         cur_heal = max_heal;
         InvokeRepeating("healbar", 1f, 1f);
     }
 
-    private void FixedUpdate()
-    {
+    private void FixedUpdate(){
         sethealthbar();
         if (cur_heal > max_heal) {
             cur_heal = max_heal;
             heal = 50;
         }
     }
-    void OnTriggerEnter(Collider other)
-    {
-        if (other.gameObject.CompareTag(tag))
-        {
-            heal--;
+    void OnTriggerEnter(Collider other){
+        if (other.gameObject.CompareTag(tag1)) {
+            //heal--;
             cur_heal -= 2;
-            if (heal == 0)
-            {
+            if (cur_heal <= 0) {
+                Destroy(gameObject);
+            }
+        } else if (other.gameObject.CompareTag(tag2)) {
+            cur_heal -= 5;
+            if (cur_heal <= 0) {
                 Destroy(gameObject);
             }
         }

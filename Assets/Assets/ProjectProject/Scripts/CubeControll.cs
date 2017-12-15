@@ -9,6 +9,7 @@ public class CubeControll : MonoBehaviour
     public GameObject bulletPrefab;
     public GameObject laserPrefab;
     public Transform bulletSpawn;
+    public Transform laserSpawn;
     public int delay;
     // Use this for initialization
     void Start()
@@ -84,7 +85,7 @@ public class CubeControll : MonoBehaviour
         if (Input.GetKey(KeyCode.L)) {
             //delay++;
            // if (delay == 2) {
-                var bullet = (GameObject)Instantiate(laserPrefab, bulletSpawn.position, bulletSpawn.rotation);
+                var bullet = (GameObject)Instantiate(laserPrefab, laserSpawn.position, laserSpawn.rotation);
                 Destroy(bullet, 3f);
                 //delay = 0;
            // }

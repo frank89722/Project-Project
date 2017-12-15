@@ -22,7 +22,7 @@ public class enemydestroy : MonoBehaviour{
         healCounter = heal;
     }
     
-	public void OnTriggerEnter(Collider other){
+	void OnTriggerEnter(Collider other){
 		if (other.gameObject.CompareTag (entag)) {
             damageCounter(2);
             damageeee = 2;

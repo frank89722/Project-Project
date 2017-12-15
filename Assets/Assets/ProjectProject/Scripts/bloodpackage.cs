@@ -54,7 +54,7 @@ public class bloodpackage : MonoBehaviour{
     void OnTriggerEnter(Collider other){
         if (other.gameObject.CompareTag("Player")){
             Destroy(gameObject);
-            leadheal.heal += 5;
+            //leadheal.heal += 5;
             leadheal.cur_heal += 10f;
         }
     }
