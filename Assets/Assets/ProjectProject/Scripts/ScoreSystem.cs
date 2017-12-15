@@ -18,12 +18,15 @@ public class ScoreSystem : MonoBehaviour {
     public static byte[] shouldSpawnEnemyCube = new byte[] { 1, 1, 0, 1, 1 };
     public static byte[] shouldSpawnBigmama = new byte[] { 0, 0, 1, 0,0 };
     public static byte[] shouldSpawnLaser2 = new byte[]{0,0,0,0,1};
-    public static int spawnCounter = 0;
+    public static int spawnCounter;
     public GameObject bigmama;
 
 
     void Start(){
         timer = 0;
+        count = 0;
+        spawnCounter = 0;
+
     }
 
     void Update(){

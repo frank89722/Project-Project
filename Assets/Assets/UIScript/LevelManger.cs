@@ -10,7 +10,7 @@ public class LevelManger : MonoBehaviour {
         Time.timeScale = 1;
         bloodpackage.x = 0;
         ScoreSystem.count = 0;
-        ScoreSystem.i = 0;
+        ScoreSystem.i = 1;
 
 	}
 
