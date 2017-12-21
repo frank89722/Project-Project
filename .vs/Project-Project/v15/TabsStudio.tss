@@ -1,0 +1,32 @@
+<?xml version="1.0"?>
+<ArrayOfArrayOfArrayOfString xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <ArrayOfArrayOfString>
+    <ArrayOfString>
+      <string>D:\GameDev\Project-Project\Assets\Assets\ProjectProject\Scripts\leadheal.cs</string>
+    </ArrayOfString>
+    <ArrayOfString>
+      <string>D:\GameDev\Project-Project\Assets\Assets\ProjectProject\Scripts\ScoreSystem.cs</string>
+    </ArrayOfString>
+    <ArrayOfString>
+      <string>D:\GameDev\Project-Project\Assets\Assets\ProjectProject\Scripts\enemydestroy.cs</string>
+    </ArrayOfString>
+    <ArrayOfString>
+      <string>D:\GameDev\Project-Project\Assets\Assets\ProjectProject\Scripts\enemy.cs</string>
+    </ArrayOfString>
+    <ArrayOfString>
+      <string>D:\GameDev\Project-Project\Assets\Assets\ProjectProject\Scripts\CubeControll.cs</string>
+    </ArrayOfString>
+    <ArrayOfString>
+      <string>D:\GameDev\Project-Project\Assets\Assets\ProjectProject\Scripts\Fire_laser.cs</string>
+    </ArrayOfString>
+    <ArrayOfString>
+      <string>D:\GameDev\Project-Project\Assets\Assets\ProjectProject\Scripts\laser2.cs</string>
+    </ArrayOfString>
+    <ArrayOfString>
+      <string>D:\GameDev\Project-Project\Assets\Assets\ProjectProject\Scripts\Fire.cs</string>
+    </ArrayOfString>
+    <ArrayOfString>
+      <string>D:\GameDev\Project-Project\Assets\Assets\ProjectProject\Scripts\laserStartAnime.cs</string>
+    </ArrayOfString>
+  </ArrayOfArrayOfString>
+</ArrayOfArrayOfArrayOfString>

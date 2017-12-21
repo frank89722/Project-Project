@@ -32,7 +32,7 @@ public class leadheal : MonoBehaviour {
                 Destroy(gameObject);
             }
         } else if (other.gameObject.CompareTag(tag2)) {
-            cur_heal -= 5;
+            cur_heal -= 4;
             if (cur_heal <= 0) {
                 Destroy(gameObject);
             }

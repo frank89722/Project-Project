@@ -8,11 +8,12 @@ public class Fire : MonoBehaviour
     public float mSpeed;
 
     void Start(){
-        mSpeed = 0.4f;
+        mSpeed = 0.35f;
     }
 
     // Update is called once per frame
     void FixedUpdate(){
+        if (CubeControll.laserStart == true) mSpeed = 0.45f;
         bulletPrefab.transform.Translate(Vector3.forward * mSpeed);
     }
 

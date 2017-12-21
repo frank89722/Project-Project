@@ -26,6 +26,7 @@ public class enemydestroy : MonoBehaviour{
 		if (other.gameObject.CompareTag (entag)) {
             damageCounter(2);
             damageeee = 2;
+            ScoreSystem.laserBuffer++;
         } else if (other.gameObject.CompareTag(entag2)){
             damageCounter(2);
             damageeee = 2;

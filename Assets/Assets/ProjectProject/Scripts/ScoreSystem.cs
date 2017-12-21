@@ -15,6 +15,8 @@ public class ScoreSystem : MonoBehaviour {
     private int otc = 0;
     private int[] scores = new int[] { 10, 20, 24, 40,60 };
     private int[] spawnSpeed = new int[] { 180, 120, 1, 80, 90 };
+    public static int laserBuffer;
+    public static bool laserGo;
     public static byte[] shouldSpawnEnemyCube = new byte[] { 1, 1, 0, 1, 1 };
     public static byte[] shouldSpawnBigmama = new byte[] { 0, 0, 1, 0,0 };
     public static byte[] shouldSpawnLaser2 = new byte[]{0,0,0,0,1};
@@ -26,10 +28,14 @@ public class ScoreSystem : MonoBehaviour {
         timer = 0;
         count = 0;
         spawnCounter = 0;
-
+        laserGo = false;
+        laserBuffer = 0;
     }
 
     void Update(){
+        if(ScoreSystem.laserBuffer >= 287) {
+            laserGo = true;
+        }
         SetLevel();
 	}
 
