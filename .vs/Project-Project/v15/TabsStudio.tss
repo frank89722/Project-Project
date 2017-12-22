@@ -2,7 +2,25 @@
 <ArrayOfArrayOfArrayOfString xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <ArrayOfArrayOfString>
     <ArrayOfString>
+      <string>D:\GameDev\Project-Project\Assets\Assets\ProjectProject\Scripts\BotControl\BotAI.cs</string>
+    </ArrayOfString>
+    <ArrayOfString>
+      <string>D:\GameDev\Project-Project\Assets\Assets\ProjectProject\Scripts\BotControl\BotFire.cs</string>
+    </ArrayOfString>
+    <ArrayOfString>
+      <string>D:\GameDev\Project-Project\Assets\Assets\ProjectProject\Scripts\CannonHeal.cs</string>
+    </ArrayOfString>
+    <ArrayOfString>
+      <string>D:\GameDev\Project-Project\Assets\Assets\ProjectProject\Scripts\bloodpackage.cs</string>
+    </ArrayOfString>
+    <ArrayOfString>
       <string>D:\GameDev\Project-Project\Assets\Assets\ProjectProject\Scripts\leadheal.cs</string>
+    </ArrayOfString>
+    <ArrayOfString>
+      <string>D:\GameDev\Project-Project\Assets\Assets\UIScript\LevelManger.cs</string>
+    </ArrayOfString>
+    <ArrayOfString>
+      <string>D:\GameDev\Project-Project\Assets\Assets\ProjectProject\Scripts\Pause.cs</string>
     </ArrayOfString>
     <ArrayOfString>
       <string>D:\GameDev\Project-Project\Assets\Assets\ProjectProject\Scripts\ScoreSystem.cs</string>
@@ -27,6 +45,9 @@
     </ArrayOfString>
     <ArrayOfString>
       <string>D:\GameDev\Project-Project\Assets\Assets\ProjectProject\Scripts\laserStartAnime.cs</string>
+    </ArrayOfString>
+    <ArrayOfString>
+      <string>D:\GameDev\Project-Project\Assets\Assets\ProjectProject\Scripts\CannonBallHeal.cs</string>
     </ArrayOfString>
   </ArrayOfArrayOfString>
 </ArrayOfArrayOfArrayOfString>
