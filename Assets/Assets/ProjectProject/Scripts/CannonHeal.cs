@@ -9,24 +9,20 @@ public class CannonHeal : MonoBehaviour {
     public static float multipleDamage;
     public GameObject healthbar;
     public int count;
-    // Use this for initialization
-    void Start()
-    {
+
+    void Start(){
         cur_heal = max_heal;
         InvokeRepeating("healbar", 1f, 1f);
     }
 
-    private void FixedUpdate()
-    {
+    private void FixedUpdate(){
         
-        if (cur_heal > max_heal)
-        {
+        if (cur_heal > max_heal){
             cur_heal = max_heal;
         }
     }
     void OnTriggerEnter(Collider other){
         if (other.gameObject.CompareTag("Pick Up") | other.gameObject.CompareTag("Pick Up2")){
-
             cur_heal -= multipleDamage;
             if (cur_heal <= 0){
                 Destroy(gameObject);

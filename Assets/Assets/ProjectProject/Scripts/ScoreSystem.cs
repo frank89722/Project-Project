@@ -11,10 +11,10 @@ public class ScoreSystem : MonoBehaviour {
     public int textShowTime;
     public int timer;
     public static int i = 1;
-    private int overtimeCount = 150;
+    private int overtimeCount = 220;
     private int otc = 0;
     private int[] scores = new int[] { 10, 20, 24, 40,60 };
-    private int[] spawnSpeed = new int[] { 180, 120, 1, 80, 90 };
+    private int[] spawnSpeed = new int[] { 180, 120, 3, 80, 90 };
     public static int laserBuffer;
     public static bool laserGo;
     public static byte[] shouldSpawnEnemyCube = new byte[] { 1, 1, 0, 1, 1 };
@@ -33,18 +33,16 @@ public class ScoreSystem : MonoBehaviour {
     }
 
     void Update(){
-        if(ScoreSystem.laserBuffer >= 287) {
+        if(laserBuffer >= 287) {
             laserGo = true;
         }
         SetLevel();
 	}
 
 	void SetLevel(){
-		countText.text = "Count: " + count.ToString ();
+		countText.text = "Count: " + count.ToString () +  " / " + scores[i-1].ToString();
         int xyz = scores.Length;
 
-        //i=level
-        //This is level control
         if (i <= xyz) {
             if (count <= scores[i - 1]) {
                 if (spawnCounter < scores[i - 1]) {

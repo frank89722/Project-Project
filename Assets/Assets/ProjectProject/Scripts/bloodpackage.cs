@@ -28,13 +28,13 @@ public class bloodpackage : MonoBehaviour{
     void FixedUpdate(){
         if (s <= 360){
             package.transform.rotation = Quaternion.Euler(0, s, 45);
-            s += 1;
+            s++;
         }
         else if (s >= 360){
             s = 0;
             package.transform.rotation = Quaternion.Euler(0, s, 45);
         }
-        if (x == 400){
+        if (x == 500){
             Destroy(GameObject.FindWithTag("healpack"));
         }
         if (x >= 600) {
@@ -42,7 +42,7 @@ public class bloodpackage : MonoBehaviour{
             hpobj.gameObject.tag = "healpack";
             x = 0;
         } else {
-            x += 1;
+            x++;
             timerx = x;
         }
 
@@ -54,12 +54,15 @@ public class bloodpackage : MonoBehaviour{
     void OnTriggerEnter(Collider other){
         if (other.gameObject.CompareTag("Player")){
             Destroy(gameObject);
-            //leadheal.heal += 5;
-            leadheal.cur_heal += 10f;
+            if (leadheal.cur_heal + 10f > leadheal.max_heal) {
+                leadheal.cur_heal = leadheal.max_heal;
+            } else {
+                leadheal.cur_heal += 15f;
+            }
         }
     }
     void sethealthbar() {
-        cur_heal -=0.5f;
+        cur_heal -=0.46f;
         float calc_heal = cur_heal / max_heal;
         sethealthbar(calc_heal);
     }

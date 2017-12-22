@@ -11,7 +11,7 @@ public class LevelManger : MonoBehaviour {
         bloodpackage.x = 0;
         ScoreSystem.count = 0;
         ScoreSystem.i = 1;
-
+        Pause.gOver = false;
+        Pause.pauseType = true;
 	}
-
 }

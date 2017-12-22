@@ -8,7 +8,7 @@ public class Fire : MonoBehaviour
     public float mSpeed;
 
     void Start(){
-        mSpeed = 0.35f;
+        mSpeed = 0.38f;
     }
 
     // Update is called once per frame

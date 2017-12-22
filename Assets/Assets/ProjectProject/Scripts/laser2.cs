@@ -29,7 +29,7 @@ public class laser2 : MonoBehaviour
                 rotateSpeed = 0;
                 laser.transform.rotation = Quaternion.Euler(0, rotateSpeed, 0);
             }
-            if (x == 600) {
+            if (x == 587) {
                 Destroy(GameObject.FindWithTag("wow"));
             }
             if (x >= 600) {
