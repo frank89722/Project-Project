@@ -47,7 +47,7 @@ public class enemydestroy : MonoBehaviour{
     void damageCounter(int bulletDamage){
         heal -= bulletDamage;
 
-        if (heal <= 0) {
+        if (heal == 0) {
             Destroy(gameObject);
             ScoreSystem.count++;
         }

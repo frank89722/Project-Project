@@ -14,7 +14,7 @@ public class ScoreSystem : MonoBehaviour {
     private int overtimeCount = 220;
     private int otc = 0;
     private int[] scores = new int[] { 10, 20, 24, 40,60 };
-    private int[] spawnSpeed = new int[] { 180, 120, 3, 80, 90 };
+    private int[] spawnSpeed = new int[] { 180, 120, 20, 80, 90 };
     public static int laserBuffer;
     public static bool laserGo;
     public static byte[] shouldSpawnEnemyCube = new byte[] { 1, 1, 0, 1, 1 };
