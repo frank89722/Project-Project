@@ -62,7 +62,7 @@ public class bloodpackage : MonoBehaviour{
         }
     }
     void sethealthbar() {
-        cur_heal -=0.42f;
+        cur_heal -=0.5f;
         float calc_heal = cur_heal / max_heal;
         sethealthbar(calc_heal);
     }

@@ -7,6 +7,8 @@ public class ScoreSystem : MonoBehaviour {
 	public Text countText;
     public Text levelText;
     public GameObject levTextObj;
+    public GameObject laserBar;
+    public GameObject laserUsingBar;
 	public static int count = 0;
     public int textShowTime;
     public int timer;
@@ -15,7 +17,8 @@ public class ScoreSystem : MonoBehaviour {
     private int otc = 0;
     private int[] scores = new int[] { 10, 20, 24, 40,60 };
     private int[] spawnSpeed = new int[] { 180, 120, 20, 80, 90 };
-    public static int laserBuffer;
+    public static float laserBuffer;
+    public static float laserTimer;
     public static bool laserGo;
     public static byte[] shouldSpawnEnemyCube = new byte[] { 1, 1, 0, 1, 1 };
     public static byte[] shouldSpawnBigmama = new byte[] { 0, 0, 1, 0,0 };
@@ -32,11 +35,20 @@ public class ScoreSystem : MonoBehaviour {
         laserBuffer = 0;
     }
 
-    void Update(){
-        if(laserBuffer >= 287) {
+    void FixedUpdate(){
+        if(laserBuffer == 287) {
             laserGo = true;
         }
         SetLevel();
+        if (CubeControll.laserStart == false) {
+            laserUsingBar.SetActive(false);
+            laserBar.SetActive(true);
+            setchargebar();
+        } else {
+            laserUsingBar.SetActive(true);
+            laserBar.SetActive(false);
+            setusingbar();
+        }
 	}
 
 	void SetLevel(){
@@ -82,5 +94,13 @@ public class ScoreSystem : MonoBehaviour {
         else {
             levTextObj.SetActive(false);
         }
+    }
+
+    void setchargebar() {
+        laserBar.transform.localScale = new Vector3(laserBuffer/287, laserBar.transform.localScale.y, laserBar.transform.localScale.z);
+    }
+
+    void setusingbar() {
+        laserUsingBar.transform.localScale = new Vector3(laserTimer/500, laserUsingBar.transform.localScale.y, laserUsingBar.transform.localScale.z);
     }
 }	

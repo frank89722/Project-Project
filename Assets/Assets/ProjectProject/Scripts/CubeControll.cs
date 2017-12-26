@@ -14,7 +14,7 @@ public class CubeControll : MonoBehaviour
     public Transform bulletSpawn;
     public Transform laserSpawn;
     public int delay;
-    public int laserTimer;
+
     private bool laserFlag;
     public static bool laserStart;
     // Use this for initialization
@@ -85,7 +85,7 @@ public class CubeControll : MonoBehaviour
             if (ScoreSystem.laserGo == true) {
                 if (laserFlag == false) {
                     laserFlag = true;
-                    laserTimer = 500;
+                    ScoreSystem.laserTimer = 500;
                     laserStartAnime.gun1(Gun);
                     laserStartAnime.gun2(laserGun);
                 }
@@ -93,8 +93,8 @@ public class CubeControll : MonoBehaviour
                     leadheal.cur_heal = leadheal.max_heal;
                     var bulletL = (GameObject)Instantiate(laserPrefab, laserSpawn.position, laserSpawn.rotation);
                     Destroy(bulletL, 3f);
-                    laserTimer--;
-                    if (laserTimer == 0) {
+                    ScoreSystem.laserTimer--;
+                    if (ScoreSystem.laserTimer == 0) {
                         laserFlag = false;
                         laserStart = false;
                         ScoreSystem.laserBuffer = 0;
