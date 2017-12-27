@@ -45,12 +45,9 @@ public class bloodpackage : MonoBehaviour{
             x++;
             timerx = x;
         }
-
-    }
-
-    void Update(){
         sethealthbar();
     }
+
     void OnTriggerEnter(Collider other){
         if (other.gameObject.CompareTag("Player")){
             Destroy(gameObject);

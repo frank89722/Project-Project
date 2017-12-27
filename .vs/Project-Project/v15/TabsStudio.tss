@@ -2,52 +2,52 @@
 <ArrayOfArrayOfArrayOfString xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <ArrayOfArrayOfString>
     <ArrayOfString>
-      <string>D:\GameDev\Project-Project\Assets\Assets\ProjectProject\Scripts\BotControl\BotAI.cs</string>
+      <string>d:\gamedev\project-project\assets\assets\projectproject\scripts\botcontrol\botai.cs</string>
     </ArrayOfString>
     <ArrayOfString>
-      <string>D:\GameDev\Project-Project\Assets\Assets\ProjectProject\Scripts\BotControl\BotFire.cs</string>
+      <string>d:\gamedev\project-project\assets\assets\projectproject\scripts\botcontrol\botfire.cs</string>
     </ArrayOfString>
     <ArrayOfString>
-      <string>D:\GameDev\Project-Project\Assets\Assets\ProjectProject\Scripts\CannonHeal.cs</string>
+      <string>d:\gamedev\project-project\assets\assets\projectproject\scripts\cannonheal.cs</string>
     </ArrayOfString>
     <ArrayOfString>
       <string>D:\GameDev\Project-Project\Assets\Assets\ProjectProject\Scripts\bloodpackage.cs</string>
     </ArrayOfString>
     <ArrayOfString>
-      <string>D:\GameDev\Project-Project\Assets\Assets\ProjectProject\Scripts\leadheal.cs</string>
+      <string>d:\gamedev\project-project\assets\assets\projectproject\scripts\leadheal.cs</string>
     </ArrayOfString>
     <ArrayOfString>
-      <string>D:\GameDev\Project-Project\Assets\Assets\UIScript\LevelManger.cs</string>
+      <string>d:\gamedev\project-project\assets\assets\uiscript\levelmanger.cs</string>
     </ArrayOfString>
     <ArrayOfString>
-      <string>D:\GameDev\Project-Project\Assets\Assets\ProjectProject\Scripts\Pause.cs</string>
+      <string>d:\gamedev\project-project\assets\assets\projectproject\scripts\pause.cs</string>
     </ArrayOfString>
     <ArrayOfString>
-      <string>D:\GameDev\Project-Project\Assets\Assets\ProjectProject\Scripts\ScoreSystem.cs</string>
+      <string>d:\gamedev\project-project\assets\assets\projectproject\scripts\scoresystem.cs</string>
     </ArrayOfString>
     <ArrayOfString>
-      <string>D:\GameDev\Project-Project\Assets\Assets\ProjectProject\Scripts\enemydestroy.cs</string>
+      <string>d:\gamedev\project-project\assets\assets\projectproject\scripts\enemydestroy.cs</string>
     </ArrayOfString>
     <ArrayOfString>
-      <string>D:\GameDev\Project-Project\Assets\Assets\ProjectProject\Scripts\enemy.cs</string>
+      <string>d:\gamedev\project-project\assets\assets\projectproject\scripts\enemy.cs</string>
     </ArrayOfString>
     <ArrayOfString>
-      <string>D:\GameDev\Project-Project\Assets\Assets\ProjectProject\Scripts\CubeControll.cs</string>
+      <string>d:\gamedev\project-project\assets\assets\projectproject\scripts\cubecontroll.cs</string>
     </ArrayOfString>
     <ArrayOfString>
-      <string>D:\GameDev\Project-Project\Assets\Assets\ProjectProject\Scripts\Fire_laser.cs</string>
+      <string>d:\gamedev\project-project\assets\assets\projectproject\scripts\fire_laser.cs</string>
     </ArrayOfString>
     <ArrayOfString>
-      <string>D:\GameDev\Project-Project\Assets\Assets\ProjectProject\Scripts\laser2.cs</string>
+      <string>d:\gamedev\project-project\assets\assets\projectproject\scripts\laser2.cs</string>
     </ArrayOfString>
     <ArrayOfString>
-      <string>D:\GameDev\Project-Project\Assets\Assets\ProjectProject\Scripts\Fire.cs</string>
+      <string>d:\gamedev\project-project\assets\assets\projectproject\scripts\fire.cs</string>
     </ArrayOfString>
     <ArrayOfString>
-      <string>D:\GameDev\Project-Project\Assets\Assets\ProjectProject\Scripts\laserStartAnime.cs</string>
+      <string>d:\gamedev\project-project\assets\assets\projectproject\scripts\laserstartanime.cs</string>
     </ArrayOfString>
     <ArrayOfString>
-      <string>D:\GameDev\Project-Project\Assets\Assets\ProjectProject\Scripts\CannonBallHeal.cs</string>
+      <string>d:\gamedev\project-project\assets\assets\projectproject\scripts\cannonballheal.cs</string>
     </ArrayOfString>
   </ArrayOfArrayOfString>
 </ArrayOfArrayOfArrayOfString>

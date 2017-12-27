@@ -13,8 +13,9 @@ public class ScoreSystem : MonoBehaviour {
     public int textShowTime;
     public int timer;
     public static int i = 1;
-    private int overtimeCount = 220;
-    private int otc = 0;
+    private int overtimeCount = 100;
+    public int otc = 0;
+    public int xyz;
     private int[] scores = new int[] { 10, 20, 24, 40, 60 };
     private int[] spawnSpeed = new int[] { 180, 120, 20, 80, 90 };
     public static float laserBuffer;
@@ -36,7 +37,7 @@ public class ScoreSystem : MonoBehaviour {
     }
 
     void FixedUpdate(){
-        if(laserBuffer == 287) {
+        if(laserBuffer >= 287) {
             laserGo = true;
         }
         SetLevel();
@@ -52,30 +53,34 @@ public class ScoreSystem : MonoBehaviour {
 	}
 
 	void SetLevel(){
-		countText.text = "Count: " + count.ToString () +  " / " + scores[i-1].ToString();
-        int xyz = scores.Length;
+		
+        xyz = scores.Length;
 
         if (i <= xyz) {
             if (count <= scores[i - 1]) {
+                countText.text = "Count: " + count.ToString() + " / " + scores[i - 1].ToString();
                 if (spawnCounter < scores[i - 1]) {
                     CannonHeal.multipleDamage = 1.2f;
                     enemy.spawn = true;
                     enemy.level = spawnSpeed[i - 1];
                     IlevelText();
                     levelText.text = "Level" + i;
-                } 
-                if (count == scores[i - 1]) {
-                    enemy.spawn = true;
-                    timer = 0;
-                    i++;
                 }
                 if (spawnCounter == scores[i - 1]) {
                     enemy.spawn = false;
                     IlevelText();
                 }
+                if (count == scores[i - 1]) {
+                    enemy.spawn = true;
+                    timer = 0;
+                    i++;
+                }
             }
-        //Infinity mode
-        }else if(i > xyz){
+            //Infinity mode
+        } else {
+            countText.text = "Count: " + count.ToString();
+            IlevelText();
+            levelText.text = "Infinity mode!!";
             CannonHeal.multipleDamage = 2.5f;
             if(otc >= overtimeCount){
                 Ispawner.SpawnEnemy(bigmama);
@@ -83,7 +88,6 @@ public class ScoreSystem : MonoBehaviour {
             } else {
                 otc++;
             }
-            
         }
     }
     void IlevelText() {
