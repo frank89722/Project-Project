@@ -28,6 +28,9 @@ public class CannonHeal : MonoBehaviour {
                 Destroy(gameObject);
                 ScoreSystem.count++;
             }
+            if (ScoreSystem.laserGo == false & ScoreSystem.laserBuffer < 287) {
+                ScoreSystem.laserBuffer+=2;
+            }
             sethealthbar();
         }
     }

@@ -11,8 +11,11 @@ public class CubeControll : MonoBehaviour
     public GameObject laserPrefab;
     public GameObject Gun;
     public GameObject laserGun;
+    public AudioSource bullet_one;
+    public AudioSource bullet_two;
     public Transform bulletSpawn;
     public Transform laserSpawn;
+    private short audio_laser_delay=0;
     public int delay;
 
     private bool laserFlag;
@@ -69,10 +72,11 @@ public class CubeControll : MonoBehaviour
     void fire(){
         if (Input.GetKey(KeyCode.Space)){
             delay++;
-            if (delay == 2){
+            if (delay == 3){
                 var bullet = (GameObject)Instantiate(bulletPrefab, bulletSpawn.position, bulletSpawn.rotation);
                 Destroy(bullet, 3f);
                 delay = 0;
+                bullet_one.Play();
             }
         }
     }
@@ -92,6 +96,12 @@ public class CubeControll : MonoBehaviour
                 else if (laserFlag == true) {
                     leadheal.cur_heal = leadheal.max_heal;
                     var bulletL = (GameObject)Instantiate(laserPrefab, laserSpawn.position, laserSpawn.rotation);
+                    if (audio_laser_delay >= 5) {
+                        bullet_two.Play();
+                        audio_laser_delay = 0;
+                    } else {
+                        audio_laser_delay ++;
+                    }
                     Destroy(bulletL, 3f);
                     ScoreSystem.laserTimer--;
                     if (ScoreSystem.laserTimer == 0) {

@@ -15,7 +15,7 @@ public class ScoreSystem : MonoBehaviour {
     public static int i = 1;
     private int overtimeCount = 220;
     private int otc = 0;
-    private int[] scores = new int[] { 10, 20, 24, 40,60 };
+    private int[] scores = new int[] { 10, 20, 24, 40, 60 };
     private int[] spawnSpeed = new int[] { 180, 120, 20, 80, 90 };
     public static float laserBuffer;
     public static float laserTimer;
@@ -32,7 +32,7 @@ public class ScoreSystem : MonoBehaviour {
         count = 0;
         spawnCounter = 0;
         laserGo = false;
-        laserBuffer = 0;
+        laserBuffer = 0f;
     }
 
     void FixedUpdate(){

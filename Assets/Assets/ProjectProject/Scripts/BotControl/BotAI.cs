@@ -9,6 +9,8 @@ public class BotAI : MonoBehaviour
 	public float AISpeed = 0.8f;
 	public float MaxDistance = 10f;
 	public float MinDistance = 0.01f;
+    public AudioSource Cube1_audio;
+    //public AudioSource Cube2_audio;
     private int delayCounter = 0;
     public int delay;
 	public GameObject bulletPrefab;
@@ -40,10 +42,11 @@ public class BotAI : MonoBehaviour
 
 	void fire(){		
 		delayCounter++;
-		if (delayCounter >= delay) {
-			var bullets = (GameObject)Instantiate (bulletPrefab, bulletSpawn.position, bulletSpawn.rotation);
-			Destroy (bullets, 10f);
-			delayCounter = 0;
-		}
+        if (delayCounter >= delay) {
+            var bullets = (GameObject)Instantiate(bulletPrefab, bulletSpawn.position, bulletSpawn.rotation);
+            Destroy(bullets, 10f);
+            Cube1_audio.Play();                                                                                                                       
+            delayCounter = 0;
+        }
 	}
 }
