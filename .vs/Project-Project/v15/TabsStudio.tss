@@ -8,7 +8,7 @@
       <string>d:\gamedev\project-project\assets\assets\uiscript\howtoplay.cs</string>
     </ArrayOfString>
     <ArrayOfString>
-      <string>D:\GameDev\Project-Project\Assets\Assets\ProjectProject\Scripts\ingameBGM.cs</string>
+      <string>d:\gamedev\project-project\assets\assets\projectproject\scripts\ingamebgm.cs</string>
     </ArrayOfString>
     <ArrayOfString>
       <string>d:\gamedev\project-project\assets\assets\uiscript\levelmanger.cs</string>
@@ -29,7 +29,7 @@
       <string>d:\gamedev\project-project\assets\assets\projectproject\scripts\enemy.cs</string>
     </ArrayOfString>
     <ArrayOfString>
-      <string>d:\gamedev\project-project\assets\assets\projectproject\scripts\cubecontroll.cs</string>
+      <string>D:\GameDev\Project-Project\Assets\Assets\ProjectProject\Scripts\CubeControll.cs</string>
     </ArrayOfString>
     <ArrayOfString>
       <string>d:\gamedev\project-project\assets\assets\projectproject\scripts\fire_laser.cs</string>
