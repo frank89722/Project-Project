@@ -9,6 +9,8 @@ public class ScoreSystem : MonoBehaviour {
     public GameObject levTextObj;
     public GameObject laserBar;
     public GameObject laserUsingBar;
+    public AudioSource player_level_up;
+    public AudioSource player_laser_ready;
 	public static int count = 0;
     public int textShowTime;
     public int timer;
@@ -39,6 +41,7 @@ public class ScoreSystem : MonoBehaviour {
     void FixedUpdate(){
         if(laserBuffer >= 287) {
             laserGo = true;
+            player_laser_ready.Play();
         }
         SetLevel();
         if (CubeControll.laserStart == false) {
@@ -72,6 +75,7 @@ public class ScoreSystem : MonoBehaviour {
                 }
                 if (count == scores[i - 1]) {
                     enemy.spawn = true;
+                    player_level_up.Play();
                     timer = 0;
                     i++;
                 }

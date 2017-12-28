@@ -13,6 +13,7 @@ public class CubeControll : MonoBehaviour
     public GameObject laserGun;
     public AudioSource bullet_one;
     public AudioSource bullet_two;
+    public AudioSource player_laser_start;
     public Transform bulletSpawn;
     public Transform laserSpawn;
     private short audio_laser_delay=0;
@@ -88,6 +89,7 @@ public class CubeControll : MonoBehaviour
         if (laserStart == true) {
             if (ScoreSystem.laserGo == true) {
                 if (laserFlag == false) {
+                    player_laser_start.Play();
                     laserFlag = true;
                     ScoreSystem.laserTimer = 500;
                     laserStartAnime.gun1(Gun);

@@ -5,6 +5,7 @@ using UnityEngine;
 public class bloodpackage : MonoBehaviour{
     public GameObject Game;
     public GameObject package;
+    public AudioSource player_heal;
     public int s;
     public float b;
     public static int x;
@@ -51,6 +52,7 @@ public class bloodpackage : MonoBehaviour{
     void OnTriggerEnter(Collider other){
         if (other.gameObject.CompareTag("Player")){
             Destroy(gameObject);
+            player_heal.Play();
             if (leadheal.cur_heal + 10f > leadheal.max_heal) {
                 leadheal.cur_heal = leadheal.max_heal;
             } else {
