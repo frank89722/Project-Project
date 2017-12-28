@@ -2,25 +2,22 @@
 <ArrayOfArrayOfArrayOfString xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <ArrayOfArrayOfString>
     <ArrayOfString>
-      <string>d:\gamedev\project-project\assets\assets\projectproject\scripts\botcontrol\botai.cs</string>
+      <string>d:\gamedev\project-project\assets\assets\uiscript\cya.cs</string>
     </ArrayOfString>
     <ArrayOfString>
-      <string>d:\gamedev\project-project\assets\assets\projectproject\scripts\botcontrol\botfire.cs</string>
+      <string>d:\gamedev\project-project\assets\assets\uiscript\howtoplay.cs</string>
     </ArrayOfString>
     <ArrayOfString>
-      <string>d:\gamedev\project-project\assets\assets\projectproject\scripts\cannonheal.cs</string>
-    </ArrayOfString>
-    <ArrayOfString>
-      <string>D:\GameDev\Project-Project\Assets\Assets\ProjectProject\Scripts\bloodpackage.cs</string>
-    </ArrayOfString>
-    <ArrayOfString>
-      <string>d:\gamedev\project-project\assets\assets\projectproject\scripts\leadheal.cs</string>
+      <string>D:\GameDev\Project-Project\Assets\Assets\ProjectProject\Scripts\ingameBGM.cs</string>
     </ArrayOfString>
     <ArrayOfString>
       <string>d:\gamedev\project-project\assets\assets\uiscript\levelmanger.cs</string>
     </ArrayOfString>
     <ArrayOfString>
       <string>d:\gamedev\project-project\assets\assets\projectproject\scripts\pause.cs</string>
+    </ArrayOfString>
+    <ArrayOfString>
+      <string>d:\gamedev\project-project\assets\assets\projectproject\scripts\leadheal.cs</string>
     </ArrayOfString>
     <ArrayOfString>
       <string>d:\gamedev\project-project\assets\assets\projectproject\scripts\scoresystem.cs</string>
@@ -48,6 +45,18 @@
     </ArrayOfString>
     <ArrayOfString>
       <string>d:\gamedev\project-project\assets\assets\projectproject\scripts\cannonballheal.cs</string>
+    </ArrayOfString>
+    <ArrayOfString>
+      <string>d:\gamedev\project-project\assets\assets\projectproject\scripts\bloodpackage.cs</string>
+    </ArrayOfString>
+    <ArrayOfString>
+      <string>d:\gamedev\project-project\assets\assets\projectproject\scripts\cannonheal.cs</string>
+    </ArrayOfString>
+    <ArrayOfString>
+      <string>d:\gamedev\project-project\assets\assets\projectproject\scripts\botcontrol\botfire.cs</string>
+    </ArrayOfString>
+    <ArrayOfString>
+      <string>d:\gamedev\project-project\assets\assets\projectproject\scripts\botcontrol\botai.cs</string>
     </ArrayOfString>
   </ArrayOfArrayOfString>
 </ArrayOfArrayOfArrayOfString>

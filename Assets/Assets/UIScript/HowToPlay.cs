@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class HowToPlay : MonoBehaviour {
-	public GameObject MeanuPenal;
+	/*public GameObject MeanuPenal;
 	public GameObject HTPP;
 	public GameObject HTPB;
 	public GameObject PB;
@@ -41,5 +41,5 @@ public class HowToPlay : MonoBehaviour {
 		if (Input.GetKey (KeyCode.A)) {
 			ButtonEclicked ();
 		}
-	}
+	}*/
 }

@@ -26,7 +26,7 @@ public class ScoreSystem : MonoBehaviour {
     public static bool player_laser_ready_flag;
     public static byte[] shouldSpawnEnemyCube = new byte[] { 1, 1, 0, 1, 1 };
     public static byte[] shouldSpawnBigmama = new byte[] { 0, 0, 1, 0,0 };
-    public static byte[] shouldSpawnLaser2 = new byte[]{0,0,0,0,1};
+    public static byte[] shouldSpawnLaser2 = new byte[]{0,0,0,0,1,1};
     public static int spawnCounter;
     public GameObject bigmama;
 

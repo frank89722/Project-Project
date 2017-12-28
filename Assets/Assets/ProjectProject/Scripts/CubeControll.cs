@@ -31,19 +31,19 @@ public class CubeControll : MonoBehaviour
     }
     // Update is called once per frame
     void FixedUpdate(){
-        if (Input.GetKey(KeyCode.W) & Input.GetKey(KeyCode.D) & Time.timeScale != 0){
+        if (Input.GetKey(KeyCode.E)){
             player.transform.rotation = Quaternion.Euler(0f, 45f, 0f);
             player.transform.Translate(new Vector3(0, 0, 1) * mSpeed);
         }
-        else if (Input.GetKey(KeyCode.S) & Input.GetKey(KeyCode.D)){
+        else if (Input.GetKey(KeyCode.C)){
             player.transform.rotation = Quaternion.Euler(0f, 135f, 0f);
             player.transform.Translate(new Vector3(0, 0, 1) * mSpeed);
         }
-        else if (Input.GetKey(KeyCode.A) & Input.GetKey(KeyCode.S)){
+        else if (Input.GetKey(KeyCode.Z)){
             player.transform.rotation = Quaternion.Euler(0f, 225f, 0f);
             player.transform.Translate(new Vector3(0, 0, 1) * mSpeed);
         }
-        else if (Input.GetKey(KeyCode.A) & Input.GetKey(KeyCode.W)){
+        else if (Input.GetKey(KeyCode.Q)){
             player.transform.rotation = Quaternion.Euler(0f, 315f, 0f);
             player.transform.Translate(new Vector3(0, 0, 1) * mSpeed);
         }
@@ -69,7 +69,7 @@ public class CubeControll : MonoBehaviour
     }
 
     void fire(){
-        if (Input.GetKey(KeyCode.Space)){
+        if (Input.GetKey(KeyCode.J)){
             delay++;
             if (delay == 3){
                 var bullet = (GameObject)Instantiate(bulletPrefab, bulletSpawn.position, bulletSpawn.rotation);
@@ -81,7 +81,7 @@ public class CubeControll : MonoBehaviour
     }
 
     void laser(){
-        if (Input.GetKey(KeyCode.L)) {
+        if (Input.GetKey(KeyCode.K)) {
             laserStart = true;
         }
         if (laserStart == true) {

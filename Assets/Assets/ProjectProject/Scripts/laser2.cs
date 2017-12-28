@@ -2,8 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class laser2 : MonoBehaviour
-{
+public class laser2 : MonoBehaviour {
     public GameObject Game;
     public GameObject laser;
     public AudioSource laser2_audio;
@@ -14,18 +13,19 @@ public class laser2 : MonoBehaviour
 
 
     // Use this for initialization
-    void Start(){
+    void Start() {
         x = 0;
+        StartCoroutine(PauseCoroutinez());
     }
 
     // Update is called once per frame
     void FixedUpdate() {
-
-        if (ScoreSystem.shouldSpawnLaser2[ScoreSystem.i-1] == 1) {
+        if (ScoreSystem.shouldSpawnLaser2[ScoreSystem.i - 1] == 1) {
             if (rotateSpeed <= 360) {
                 laser.transform.rotation = Quaternion.Euler(0, rotateSpeed, 0);
                 rotateSpeed += 4;
-            } else if (rotateSpeed >= 360) {
+            }
+            else if (rotateSpeed >= 360) {
                 rotateSpeed = 0;
                 laser.transform.rotation = Quaternion.Euler(0, rotateSpeed, 0);
             }
@@ -38,13 +38,23 @@ public class laser2 : MonoBehaviour
                 lobj.gameObject.tag = "wow";
                 laser2_audio.Play();
                 x = 0;
-            } else {
+            }
+            else {
                 x += 1;
                 timerx = x;
             }
-        } else {
+        }
+        else {
             Destroy(GameObject.FindWithTag("wow"));
         }
     }
-}
 
+    public IEnumerator PauseCoroutinez() {
+        while (true) {
+            if (Pause.gOver == true) laser2_audio.Stop();
+            if (Time.timeScale == 0) laser2_audio.Pause();
+            else laser2_audio.UnPause();
+            yield return null;
+        }
+    }
+}

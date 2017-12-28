@@ -46,7 +46,7 @@ public class bloodpackage : MonoBehaviour{
             x++;
             timerx = x;
         }
-        sethealthbar();
+        if(gameObject.tag == "healpack") sethealthbar();
     }
 
     void OnTriggerEnter(Collider other){

@@ -4,8 +4,6 @@ using UnityEngine;
 using System.Threading;
 
 public class laserStartAnime : MonoBehaviour {
-    //public GameObject Gun;
-    //public GameObject laserGun;
 
     public static void gun1(GameObject Gun) {
         Gun.transform.Translate(0.3f, 0f, 0f);
