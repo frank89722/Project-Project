@@ -23,6 +23,7 @@ public class ScoreSystem : MonoBehaviour {
     public static float laserBuffer;
     public static float laserTimer;
     public static bool laserGo;
+    public static bool player_laser_ready_flag;
     public static byte[] shouldSpawnEnemyCube = new byte[] { 1, 1, 0, 1, 1 };
     public static byte[] shouldSpawnBigmama = new byte[] { 0, 0, 1, 0,0 };
     public static byte[] shouldSpawnLaser2 = new byte[]{0,0,0,0,1};
@@ -36,12 +37,17 @@ public class ScoreSystem : MonoBehaviour {
         spawnCounter = 0;
         laserGo = false;
         laserBuffer = 0f;
+        player_laser_ready_flag = true;
     }
 
     void FixedUpdate(){
         if(laserBuffer >= 287) {
             laserGo = true;
+        }
+        //if(player_laser_ready_flag)
+        if(laserGo == true & player_laser_ready_flag == true){
             player_laser_ready.Play();
+            player_laser_ready_flag = false;
         }
         SetLevel();
         if (CubeControll.laserStart == false) {
@@ -78,6 +84,7 @@ public class ScoreSystem : MonoBehaviour {
                     player_level_up.Play();
                     timer = 0;
                     i++;
+                    ingameBGM.next = true;
                 }
             }
             //Infinity mode

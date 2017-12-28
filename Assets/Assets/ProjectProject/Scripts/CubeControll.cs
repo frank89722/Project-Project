@@ -68,8 +68,6 @@ public class CubeControll : MonoBehaviour
         laser();
     }
 
-
-
     void fire(){
         if (Input.GetKey(KeyCode.Space)){
             delay++;
@@ -111,6 +109,7 @@ public class CubeControll : MonoBehaviour
                         laserStart = false;
                         ScoreSystem.laserBuffer = 0;
                         ScoreSystem.laserGo = false;
+                        ScoreSystem.player_laser_ready_flag = true;
                         laserStartAnime.gun1_back(Gun);
                         laserStartAnime.gun2_back(laserGun);
                     }
