@@ -31,19 +31,19 @@ public class CubeControll : MonoBehaviour
     }
     // Update is called once per frame
     void FixedUpdate(){
-        if (Input.GetKey(KeyCode.E)){
+        if (Input.GetKey(KeyCode.W) & Input.GetKey(KeyCode.D)){
             player.transform.rotation = Quaternion.Euler(0f, 45f, 0f);
             player.transform.Translate(new Vector3(0, 0, 1) * mSpeed);
         }
-        else if (Input.GetKey(KeyCode.C)){
+        else if (Input.GetKey(KeyCode.D) & Input.GetKey(KeyCode.S)){
             player.transform.rotation = Quaternion.Euler(0f, 135f, 0f);
             player.transform.Translate(new Vector3(0, 0, 1) * mSpeed);
         }
-        else if (Input.GetKey(KeyCode.Z)){
+        else if (Input.GetKey(KeyCode.S) & Input.GetKey(KeyCode.A)){
             player.transform.rotation = Quaternion.Euler(0f, 225f, 0f);
             player.transform.Translate(new Vector3(0, 0, 1) * mSpeed);
         }
-        else if (Input.GetKey(KeyCode.Q)){
+        else if (Input.GetKey(KeyCode.W) & Input.GetKey(KeyCode.A)){
             player.transform.rotation = Quaternion.Euler(0f, 315f, 0f);
             player.transform.Translate(new Vector3(0, 0, 1) * mSpeed);
         }
